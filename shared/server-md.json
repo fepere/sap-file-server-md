@@ -2,6 +2,13 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "vmLocation": {
+        "type": "string",
+        "defaultValue": "centralus",
+        "metadata": {
+        "description": "Location or datacenter where the VM will be placed."
+        }
+    },  
     "imageReference": {
       "type": "object",
       "metadata": {
@@ -178,14 +185,14 @@
       "type": "Microsoft.Compute/virtualMachines",
       "name": "[parameters('vmName')]",
       "apiVersion": "2017-03-30",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('vmLocation')]",
       "properties": "[variables('internalProperties')]"
     },
     {
       "type": "Microsoft.Compute/virtualMachines/extensions",
       "name": "[concat(parameters('vmName'), '/', variables('cseExtName'))]",
       "apiVersion": "2015-06-15",
-      "location": "[resourceGroup().location]",
+      "location": "[parameters('vmLocation')]",
       "dependsOn": [
         "[concat('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
       ],
