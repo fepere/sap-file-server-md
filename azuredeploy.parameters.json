@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "resourcePrefix": {
+      "value": "gfzdr"
+    },
+    "osType": {
+      "value": "SLES 12"
+    },
+    "adminUsername": {
+      "value": "rootadmin"
+    },
+    "adminPassword": {
+      "value": "Passw0rd12345"
+    },
+    "subnetId": {
+      "value": "/subscriptions/fcb7de9c-c9a0-403a-8d08-86972397b1f6/resourceGroups/rg-SapDXCBackoff/providers/Microsoft.Network/virtualNetworks/vn-uscn-co-sapdxc-01/subnets/sn-uscn-sapdxc-gfx"
+    },
+    "_artifactsLocation": {
+      "value": "https://raw.githubusercontent.com/fepere/Azure/azure-quickstart-templates/master/sap-file-server-md/"
+    },
+    "_artifactsLocationSasToken": {
+      "value": ""
+    }
+  }
+}
